@@ -25,4 +25,11 @@ public class Cell {
     public void clearValue(){
         setCurrentValue("0");
     }
+
+    public String getDisplayValue() {
+        if (currentValue.equals("0")) return " ";
+        if (fixedValue) return currentValue;
+        if (!checkValue()) return "\u001B[31m" + currentValue + "\u001B[0m"; //red
+        return "\u001B[32m" + currentValue + "\u001B[0m"; //gren
+    }
 }

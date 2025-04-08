@@ -3,7 +3,7 @@ package edu.gus.sudoku.util;
 public class GridConsole {
     public static String PRINT =
                     "=========   SUDOKU  =========\n\n"+
-                    "    A B C | D E F | G H I\n"+
+                    "    A B C   D E F   G H I\n"+
                     "  --------|-------|-------\n" +
                     "1 | %s %s %s | %s %s %s | %s %s %s |\n"+
                     "2 | %s %s %s | %s %s %s | %s %s %s |\n"+

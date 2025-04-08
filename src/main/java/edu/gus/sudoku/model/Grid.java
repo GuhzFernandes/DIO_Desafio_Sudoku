@@ -28,10 +28,22 @@ public class Grid {
         }
     }*/
 
+    public void writeCell (int row, int column, int value){
+        cells[row][column].setCurrentValue(Integer.toString(value));
+    }
+
+    public void reset(){
+        for (int i=0;i<9;i++) {
+            for (int j = 0; j < 9; j++) {
+                cells[i][j].clearValue();
+            }
+        }
+    }
+
     public void print(){
         String[] values = Arrays.stream(cells)
                 .flatMap(Arrays::stream)
-                .map(Cell::getCurrentValue)
+                .map(Cell::getDisplayValue)
                 .toArray(String[]::new);
 
         System.out.println(String.format(GridConsole.PRINT,values));
