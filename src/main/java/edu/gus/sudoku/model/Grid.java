@@ -20,14 +20,6 @@ public class Grid {
         }
     }
 
-    /*public void checkValues(){
-        for (int i=0;i<9;i++){
-            for (int j = 0; j<9; j++){
-                cells[i][j].checkValue();
-            }
-        }
-    }*/
-
     public void writeCell (int row, int column, int value){
         cells[row][column].setCurrentValue(Integer.toString(value));
     }
@@ -46,6 +38,7 @@ public class Grid {
                 .map(Cell::getDisplayValue)
                 .toArray(String[]::new);
 
+        System.out.println("\n\n");
         System.out.println(String.format(GridConsole.PRINT,values));
     }
 

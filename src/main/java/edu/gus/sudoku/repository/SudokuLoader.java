@@ -1,4 +1,4 @@
-package edu.gus.sudoku.util;
+package edu.gus.sudoku.repository;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.gus.sudoku.model.SudokuEntry;
