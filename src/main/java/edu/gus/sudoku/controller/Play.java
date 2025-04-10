@@ -1,6 +1,7 @@
 package edu.gus.sudoku.controller;
 
 import edu.gus.sudoku.model.Grid;
+import edu.gus.sudoku.repository.GameSaver;
 import edu.gus.sudoku.util.InputMap;
 
 import java.util.Arrays;
@@ -42,8 +43,8 @@ public class Play {
                         game.print();
                         break;
                     case "4":
-                        System.out.println("Saving game... (Coming soon!)");
-                        // TODO: Save game to file
+                        System.out.println("Saving game...");
+                        GameSaver.saveGame(game);
                         break;
                     case "0":
                         playing = false;

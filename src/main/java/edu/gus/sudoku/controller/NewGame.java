@@ -2,7 +2,7 @@ package edu.gus.sudoku.controller;
 
 import edu.gus.sudoku.model.Grid;
 import edu.gus.sudoku.model.SudokuEntry;
-import edu.gus.sudoku.repository.SudokuLoader;
+import edu.gus.sudoku.repository.GameLoader;
 import java.util.List;
 import java.util.Scanner;
 
@@ -14,7 +14,7 @@ public class NewGame {
     private static List<SudokuEntry> loadPuzzles(){
         List<SudokuEntry> entries;
         try {
-            entries = SudokuLoader.loadPuzzle();
+            entries = GameLoader.loadDB();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -26,7 +26,7 @@ public class NewGame {
         System.out.println("[ 1 ~ "+entries.size()+" ]");
         System.out.print("Please, select a game to start: ");
         int command = Integer.parseInt(input.nextLine().trim())-1;
-        if(command >= 1 && command <= entries.size()){
+        if(command >= 0 && command < entries.size()){
             return entries.get(command);
         }
         else {

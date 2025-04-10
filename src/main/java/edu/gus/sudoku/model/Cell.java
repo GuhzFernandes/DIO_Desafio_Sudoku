@@ -1,9 +1,19 @@
 package edu.gus.sudoku.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Cell {
+    @JsonProperty
     private String currentValue;
-    private final String expectedValue;
-    private final boolean fixedValue;
+    @JsonProperty
+    private String expectedValue;
+    @JsonProperty
+    private boolean fixedValue;
+
+
+    public Cell(){
+    }
 
     public Cell(String currentValue, String expectedValue) {
         this.currentValue = currentValue;
@@ -27,6 +37,7 @@ public class Cell {
         setCurrentValue("0");
     }
 
+    @JsonIgnore
     public String getDisplayValue() {
         if (currentValue.equals("0")) return " ";
         if (fixedValue) return currentValue;

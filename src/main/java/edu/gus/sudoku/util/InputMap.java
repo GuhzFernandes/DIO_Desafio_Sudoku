@@ -13,8 +13,7 @@ public class InputMap {
     }
     public static int[] eraseCommand(String input) {
         input = input.trim().toUpperCase();
-        if (input.length() != 2)
-            throw new IllegalArgumentException("Invalid format. Use: B2");
+        if (input.length() != 2) throw new IllegalArgumentException("Invalid format. Use: B2");
 
         return new int[] {
                 GridMap.row(Character.getNumericValue(input.charAt(1))),

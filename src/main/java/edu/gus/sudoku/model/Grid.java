@@ -1,11 +1,17 @@
 package edu.gus.sudoku.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import edu.gus.sudoku.util.GridConsole;
 
 import java.util.Arrays;
 
 public class Grid {
+    @JsonProperty
     private Cell[][] cells;
+
+    public Grid(){
+
+    }
 
     public Grid(SudokuEntry sudokuEntry) {
         cells = new Cell[9][9];
@@ -18,6 +24,10 @@ public class Grid {
                 index++;
             }
         }
+    }
+
+    public Cell[][] getCells() {
+        return cells;
     }
 
     public void writeCell (int row, int column, int value){

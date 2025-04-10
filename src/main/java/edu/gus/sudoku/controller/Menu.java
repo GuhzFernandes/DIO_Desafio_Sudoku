@@ -1,5 +1,6 @@
 package edu.gus.sudoku.controller;
 import edu.gus.sudoku.model.Grid;
+import edu.gus.sudoku.repository.GameLoader;
 import edu.gus.sudoku.util.Rules;
 
 import java.util.Scanner;
@@ -35,8 +36,13 @@ public class Menu {
                     }
                     break;
                 case "3":
-                    System.out.println("-> [Load Game] Load from a saved file. (Coming soon!)");
-                    // TODO: Load game state from file
+                    System.out.println("-> [Load Game] Load from a saved file.");
+                    try {
+                        Grid game = GameLoader.loadSave();
+                        Play.run(game, input);
+                    } catch (Exception e) {
+                        System.out.println("❌ Could not load saved game: " + e.getMessage());
+                    }
                     break;
                 case "0":
                     running = false;
