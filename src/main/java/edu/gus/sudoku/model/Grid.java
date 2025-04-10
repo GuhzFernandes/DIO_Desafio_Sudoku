@@ -24,6 +24,10 @@ public class Grid {
         cells[row][column].setCurrentValue(Integer.toString(value));
     }
 
+    public void eraseCell (int row, int column){
+        cells[row][column].clearValue();
+    }
+
     public void reset(){
         for (int i=0;i<9;i++) {
             for (int j = 0; j < 9; j++) {

@@ -11,6 +11,7 @@ public class Cell {
         this.fixedValue = !currentValue.equals("0");
     }
 
+    //possibly usefull for GUI implementation
     public String getCurrentValue() {
         return currentValue;
     }

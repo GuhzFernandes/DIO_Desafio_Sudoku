@@ -26,8 +26,13 @@ public class Menu {
                     break;
                 case "2":
                     System.out.println("\n\n-> [New Game] Select a puzzle from the database.");
-                    Grid game = NewGame.run(input);
-                    Play.run(game,input);
+                    try{
+                        Grid game = NewGame.run(input);
+                        Play.run(game,input);
+                    }
+                    catch (Exception e){
+                        System.out.println(e);
+                    }
                     break;
                 case "3":
                     System.out.println("-> [Load Game] Load from a saved file. (Coming soon!)");
