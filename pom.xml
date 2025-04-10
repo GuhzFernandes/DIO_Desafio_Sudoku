@@ -15,14 +15,14 @@
     </properties>
 
     <dependencies>
-        <!-- Jackson para trabalhar com JSON -->
+        <!-- Jackson para JSON -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.15.2</version>
         </dependency>
 
-        <!-- JUnit 5 para testes (opcional) -->
+        <!-- JUnit 5 (opcional para testes) -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
@@ -33,7 +33,7 @@
 
     <build>
         <plugins>
-            <!-- Plugin para compilar com Java -->
+            <!-- Compilador Java -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
@@ -42,14 +42,26 @@
                 </configuration>
             </plugin>
 
-            <!-- Plugin para executar a aplicação com mvn exec:java -->
+            <!-- Plugin para gerar o JAR com dependências (fat jar) -->
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>3.1.0</version>
-                <configuration>
-                    <mainClass>edu.gus.sudoku.Main</mainClass>
-                </configuration>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.5.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>edu.gus.sudoku.App</mainClass>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
