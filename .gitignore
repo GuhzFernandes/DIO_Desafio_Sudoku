@@ -30,4 +30,6 @@ bin/
 
 ### Game save files ###
 /src/main/resources/save.json
-/target/classes/save.json
+
+# Maven
+/target/
