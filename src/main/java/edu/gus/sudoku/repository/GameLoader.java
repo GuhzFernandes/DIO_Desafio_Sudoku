@@ -22,7 +22,7 @@ public class GameLoader {
 
     public static Grid loadSave() throws Exception {
         ObjectMapper mapper = new ObjectMapper();
-        File saveFile = new File("src/main/resources/save.json");
+        File saveFile = new File("save.json");
         if (!saveFile.exists()) throw new RuntimeException("⚠️ No save founded! Please start a new game.");
         return mapper.readValue(saveFile, Grid.class);
     }

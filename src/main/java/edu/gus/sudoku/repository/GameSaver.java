@@ -8,8 +8,7 @@ import java.io.IOException;
 
 public class GameSaver {
 
-    private static final String SAVE_PATH = "src/main/resources/save.json";
-
+    private static final String SAVE_PATH = "save.json";
     public static void saveGame(Grid game) {
         ObjectMapper mapper = new ObjectMapper();
         File saveFile = new File(SAVE_PATH);
