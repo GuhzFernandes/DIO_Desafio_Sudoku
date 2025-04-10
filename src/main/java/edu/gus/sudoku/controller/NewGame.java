@@ -26,12 +26,8 @@ public class NewGame {
         System.out.println("[ 1 ~ "+entries.size()+" ]");
         System.out.print("Please, select a game to start: ");
         int command = Integer.parseInt(input.nextLine().trim())-1;
-        if(command >= 0 && command < entries.size()){
-            return entries.get(command);
-        }
-        else {
-            throw new IllegalArgumentException("Invalid game numeber. Choose a number between 1 ~ " + entries.size());
-        }
+        if(command >= 0 && command < entries.size()) return entries.get(command);
+        else throw new IllegalArgumentException("Invalid game numeber. Choose a number between 1 ~ " + entries.size());
     }
 
 }

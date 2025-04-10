@@ -20,7 +20,6 @@ public class Menu {
             System.out.print("Select an option: ");
 
             String option = input.nextLine().trim();
-
             switch (option) {
                 case "1":
                     Rules.print();
@@ -54,7 +53,6 @@ public class Menu {
 
             System.out.println();
         }
-
         input.close();
     }
 }

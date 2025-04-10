@@ -33,6 +33,7 @@ public class Cell {
     public boolean checkValue(){
         return currentValue.equals(expectedValue);
     }
+
     public void clearValue(){
         setCurrentValue("0");
     }

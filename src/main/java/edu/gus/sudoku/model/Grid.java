@@ -2,7 +2,6 @@ package edu.gus.sudoku.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import edu.gus.sudoku.util.GridConsole;
-
 import java.util.Arrays;
 
 public class Grid {
@@ -54,6 +53,10 @@ public class Grid {
 
         System.out.println("\n\n");
         System.out.println(String.format(GridConsole.PRINT,values));
+    }
+
+    public boolean endGame(){
+        return Arrays.stream(cells).flatMap(Arrays::stream).map(Cell::checkValue).allMatch(x-> x);
     }
 
 }
