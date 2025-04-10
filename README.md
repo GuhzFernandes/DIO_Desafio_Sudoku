@@ -24,7 +24,7 @@ https://www.kaggle.com/datasets/rohanrao/sudoku
 🔄 Data Conversion Tool
 To convert the dataset to a Java-friendly JSON format, this script was used:
 
-📂 SudokuDB_PythonConverter
+📂 [SudokuDB_PythonConverter](https://github.com/GuhzFernandes/SudokuDB_PythonConverter)
 Developed specifically to facilitate the transition from .csv puzzles to JSON for usage in this project.
 
 ## ✍️ Credits
